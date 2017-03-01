@@ -1,0 +1,49 @@
+# Text files with automatic crlf conversion per platform
+
+*.cs		text
+*.cpp		text
+*.h         text
+
+# UTF-16 encoded files need special treatment for diffing to work
+# To diff these on the command line properly, add the following to your
+# ~/.gitconfig
+# [diff "utf16"]
+#     textconv = "iconv -f utf-16 -t utf-8"
+
+Content/Localization/**/*.archive	text	diff=utf16
+Content/Localization/**/*.manifest	text	diff=utf16
+
+# Text files that should always stay as crlf
+
+*.csproj	text	eol=crlf
+*.sln		text	eol=crlf
+
+# Binary overrides
+gradle/wrapper/gradle-wrapper.jar   !filter binary
+
+# Individual files
+
+*.a filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
+*.jar filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
+*.lxo filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.sbsar filter=lfs diff=lfs merge=lfs -text
+*.so filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.tif filter=lfs diff=lfs merge=lfs -text
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.exe filter=lfs diff=lfs merge=lfs -text
